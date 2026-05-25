@@ -2,15 +2,12 @@ import React, {useContext} from 'react';
 import {ShmitterContext} from "../utils/context.js";
 
 const Avatar = ({size}) => {
-    const {user, setUser} = useContext(ShmitterContext)
-    const handleAvatarClick = () => {
-        const newAvatarUrl = prompt("Change your Avatar?")
+    const {user, changeAvatar} = useContext(ShmitterContext)
 
-        setUser({
-            ...user,
-            avatar: newAvatarUrl
-        })
-    }
+const handleAvatarClick = () => {
+    const url = prompt("Change your Avatar?")
+    changeAvatar(url)
+}
 
     return (
      <img  className={`user-avatar ${size ?? ''}`}

@@ -9,18 +9,20 @@ import {ShmitterContext} from "./utils/context.js";
 
 function App() {
     const [user, setUser]=useState ({
-        avatar: 'https://gravatar.com/avatar/000?d=mosterid',
+        avatar: 'https://gravatar.com/avatar/000?d=monsterid',
         name:'Monster'
     })
     const [stats, setStats]=useState ({
         followers: 100,
         following: 50
     })
+    const changeAvatar = url => {
+        setUser({...user, avatar: url || user.avatar})
+    }
   return (
       <div className={'app'}>
           <ShmitterContext value={{
-              user: {user, setUser},
-              stats: stats
+              user, changeAvatar, stats
           }}>
         <Navigation />
         <Body />
