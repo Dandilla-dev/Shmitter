@@ -17,7 +17,10 @@ function App() {
         following: 50
     })
     const changeAvatar = url => {
-        setUser({...user, avatar: url || user.avatar})
+        // setUser( {...user, name: 'User'})
+        // setUser( {...user, avatar: url || user.avatar})
+        // setUser( prevState => ({...prevState, name: 'User'}))
+        setUser( prevState => ({...prevState, avatar: url || prevState.avatar}))
     }
   return (
       <div className={'app'}>
