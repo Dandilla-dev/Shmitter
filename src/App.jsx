@@ -5,10 +5,11 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Body from "./components/Body.jsx";
 import Navigation from "./components/Navigation.jsx";
+import {ShmitterContext} from "./utils/context.js";
 
 function App() {
     const [user, setUser]=useState ({
-        avatar:'https://gravatar.com/avatar/000?d=monsterid',
+        avatar: 'https://gravatar.com/avatar/000?d=mosterid',
         name:'Monster'
     })
     const [stats, setStats]=useState ({
@@ -17,8 +18,13 @@ function App() {
     })
   return (
       <div className={'app'}>
-        <Navigation user={user}/>
-        <Body user={user} stats={stats}/>
+          <ShmitterContext value={{
+              user: {user, setUser},
+              stats: stats
+          }}>
+        <Navigation />
+        <Body />
+          </ShmitterContext>
       </div>
   )
 }
