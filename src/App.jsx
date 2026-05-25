@@ -12,8 +12,8 @@ function App() {
         name:'Monster'
     })
     const [stats, setStats]=useState ({
-        Followers: 100,
-        Following: 50
+        followers: 100,
+        following: 50
     })
   return (
       <div className={'app'}>
