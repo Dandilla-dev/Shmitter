@@ -1,10 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const userAvatarSlice = createSlice( {
-    name: "user",
-    initialState: {
-        name: 'Monster'
-    },
+    name: "avatar",
+    initialState: 'https://gravatar.com/avatar/000?d=monsterid',
     reducers: {
         changeAvatar: (state, action) => action.payload
     }

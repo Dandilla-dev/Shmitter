@@ -1,10 +1,8 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const userNameSlice = createSlice( {
-    name: "user",
-    initialState: {
-        name: 'Monster'
-    },
+    name: "name",
+    initialState:  'Monster',
     reducers: {
     changeName: (state, action) => action.payload
 }

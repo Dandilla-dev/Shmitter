@@ -1,9 +1,11 @@
 import {useDispatch, useSelector} from "react-redux";
 import {changeName} from "../features/user/userSlice.js";
+import {changeAvatar} from "../features/user/avatarSlice.js";
 
 
 const Avatar = ({size}) => {
-    const {avatar, name} = useSelector(state => state.user);
+    const avatar = useSelector(state => state.avatar);
+    const name = useSelector(state => state.name);
     const dispatch = useDispatch();
 
     return (
