@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {changeStats} from "../features/stats/statsSlice.js";
 
 const Stats = () => {
-    const {name} = useSelector(state => state.user);
+    const name = useSelector(state => state.name);
     const {followers, following} = useSelector(state => state.stats);
     const dispatch = useDispatch();
 

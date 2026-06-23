@@ -12,12 +12,12 @@ const Avatar = ({size}) => {
         <img
             onClick={() => {
                 const url = prompt('Enter avatar url');
-                dispatch(changeAvatar(url));
+                if (url) dispatch(changeAvatar(url));
             }}
             onContextMenu={(e) => {
                 e.preventDefault();
                 const newName = prompt('Enter new name');
-                dispatch(changeName(newName));
+                if (newName) dispatch(changeName(newName));
             }}
             className={`user-avatar ${size ?? ''}`}
             src={avatar}
