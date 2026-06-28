@@ -8,11 +8,14 @@ const statsSlice = createSlice( {
     },
 
     reducers: {
-        changeStats: (state, action) => {
-            const res = state[action.payload.statsType] + action.payload.sum;
-            const newValue = res < 0 ? 0 : res;
-            state[action.payload.statsType] = newValue
-        }
+        changeStats: {
+            reducer: (state, action)=> {
+    const res = state[action.payload.statsType] + action.payload.sum;
+    const newValue = res < 0 ? 0 : res;
+    state[action.payload.statsType] = newValue
+},
+            prepare: (statsType, sum) => ({payload: {statsType, sum}})
+}
     }
 })
 
